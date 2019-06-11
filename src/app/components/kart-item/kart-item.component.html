@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12 mb-3 text-body">
+        <div class="d-flex justify-content-between">
+            <img width="50" height="50" [src]="item.image" [alt]="item.name">
+            <div>
+                <p class="mb-0 font-weight-bold">{{item.name | titlecase}}</p>
+                <p class="mb-0">{{item.price | currency}}</p>
+            </div>
+            <div>
+                <p class="mb-0">Cantidad:</p>
+                <p class="mb-0 text-center">{{item.quality}}</p>
+            </div>
+            <mat-icon class="c-p text-warning" (click)="editMode = true" *ngIf="!editMode">edit</mat-icon>
+            <div class="btn-group" role="group" aria-label="Basic example" *ngIf="editMode">
+                <button type="button" class="btn btn-light btn-sm" *ngIf="item.quality!=1" (click)="remove()">
+                        <mat-icon class="c-p text-success" >keyboard_arrow_left</mat-icon>
+                    </button>
+                <button type="button" class="btn btn-light btn-sm" (click)="delete()">
+                            <mat-icon class="c-p text-danger" >delete</mat-icon>
+                    </button>
+                <button type="button" class="btn btn-light btn-sm" (click)="add()">
+                        <mat-icon class="c-p text-success" >keyboard_arrow_right</mat-icon>
+                    </button>
+                <button type="button" class="btn btn-light btn-sm" (click)="editMode = false">
+                            <mat-icon class="c-p text-info" >close</mat-icon>
+                    </button>
+            </div>
+        </div>
+    </div>
+</div>

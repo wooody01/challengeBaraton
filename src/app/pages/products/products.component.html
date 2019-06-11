@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <filter class="col-12" (config)="config($event)"></filter>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row" *ngIf="!spinner">
+            <ng-container *ngIf="products.length>0">
+                <card-product class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3 " [item]="item" *ngFor="let item of products"></card-product>
+            </ng-container>
+            <ng-container *ngIf="products.length===0">
+                <span class="col-12 text-center mt-5">No se encontro ningun producto</span>
+                <div class="col-12 text-center mt-5">
+                    <input class="form-control form-control-sm w-25 mx-auto mb-3" type="search" placeholder="Buscar Producto" aria-label="Search">
+                    <button class="btn btn-outline-success btn-sm w-25" type="submit">Buscar</button>
+
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

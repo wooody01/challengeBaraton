@@ -1,0 +1,13 @@
+<div class="card mat-elevation-z10">
+    <div class="available" *ngIf="product.available"></div>
+    <img class="card-img-top" [src]="image" [alt]="product.name" (error)="notFound(this)">
+    <div class="card-body">
+        <h4 class="card-title mb-0">{{product.name | titlecase}}</h4>
+        <div class="card-text my-3">
+            <p class="mb-0">{{product.price}}</p>
+            <p class="mb-0">Categoria: {{product.sublevel_id}}</p>
+            <p class="mb-0">Cantidad: {{product.quantity}}</p>
+        </div>
+        <button href="#" class="btn col" [ngClass]="{'btn-success': product.available, 'btn-secondary': !product.available}" [disabled]="!product.available" (click)="addToKart()">{{product.available?'Comprar':'No disponible'}}</button>
+    </div>
+</div>

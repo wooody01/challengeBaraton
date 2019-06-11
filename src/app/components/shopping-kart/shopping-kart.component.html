@@ -1,0 +1,20 @@
+<div class="shopping ">
+    <div class="row">
+        <div class="col-12">
+            <p class="text-body font-weight-bolder">Carrito</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <kart-item [item]="item" [edit]="editId" (delete)="delete($event)" (add)="add($event)" (remove)="remove($event)" *ngFor="let item of products"></kart-item>
+            <p class="text-body text-center" *ngIf="total===0">No hay productos en el carrito</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-body text-center font-weight-bold"> Total: {{total | currency}}</p>
+            <button class="btn btn-primary w-100" (click)="pay()" [disabled]="total===0">Pagar</button>
+        </div>
+    </div>
+
+</div>
