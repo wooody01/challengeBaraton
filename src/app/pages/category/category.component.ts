@@ -12,6 +12,7 @@ import { product } from "src/app/models/product";
 })
 export class CategoryComponent implements OnInit {
   
+
   products: product[];
   productsInitial: product[];
   productsFilters: product[];
